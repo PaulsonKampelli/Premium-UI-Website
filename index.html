@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mall of America - The Ultimate Destination</title>
+    <meta name="description" content="Explore Mall of America: The world's premier retail, dining, and entertainment destination.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- GSAP & Lenis -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <!-- SplitType for Typography Animation -->
+    <script src="https://unpkg.com/split-type"></script>
+</head>
+<body class="loading">
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo magnetic">
+                <span class="logo-text">MOA</span>
+                <span class="logo-subtext">MALL OF AMERICA</span>
+            </div>
+            <div class="nav-links">
+                <a href="#overview" class="magnetic">Overview</a>
+                <a href="#scale" class="magnetic">The Scale</a>
+                <a href="#luxury" class="magnetic">Luxury</a>
+                <a href="#dining" class="magnetic">Dining</a>
+                <a href="#entertainment" class="magnetic">Entertainment</a>
+                <a href="#events" class="magnetic">Events</a>
+            </div>
+            <div class="nav-actions magnetic">
+                <button class="btn btn-primary">Partner With Us</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress"></div>
+
+    <main>
+        <!-- Hero Section (Apple Style Expanding Media) -->
+        <section id="overview" class="hero">
+            <div class="hero-sticky-container">
+                <div class="hero-media-wrapper">
+                    <img src="assets/images/hero.png" alt="Mall of America Exterior" class="hero-img">
+                    <div class="hero-overlay"></div>
+                </div>
+                <div class="hero-content">
+                    <h1 class="hero-title gs-reveal">More Than A Destination.<br><span class="text-accent">It's A City.</span></h1>
+                    <p class="hero-subtitle gs-reveal">Retail. Dining. Entertainment. A global platform for the world's most ambitious brands.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scale Data (Tesla Style Clean Grid) -->
+        <section id="scale" class="data-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-label gs-reveal">Why This Property</h2>
+                    <h3 class="section-heading gs-reveal">Scale That Defies Gravity.</h3>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value gs-counter" data-target="40">0</div>
+                        <div class="stat-label">Million Annual Visitors</div>
+                        <div class="stat-line"></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value gs-counter" data-target="5.6">0</div>
+                        <div class="stat-label">Million Square Feet</div>
+                        <div class="stat-line"></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value gs-counter" data-target="520">0</div>
+                        <div class="stat-label">Retail Concepts</div>
+                        <div class="stat-line"></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value gs-counter" data-target="2.5">0</div>
+                        <div class="stat-label">Days Average Stay</div>
+                        <div class="stat-line"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Horizontal Scroll Section (Hermes/Gucci Style) -->
+        <section class="horizontal-scroll-section" id="horizontal-scroll">
+            <div class="horizontal-container">
+                
+                <!-- Panel 1: Luxury -->
+                <div class="horizontal-panel" id="luxury">
+                    <div class="panel-content">
+                        <div class="panel-text">
+                            <h2 class="section-label">Luxury & Retail</h2>
+                            <h3 class="section-heading">Elevated. Unrivaled.</h3>
+                            <p class="section-desc">A curated collection of the world's finest fashion houses and innovative retail concepts. We provide the architectural grandeur; you provide the vision.</p>
+                            <button class="btn btn-outline magnetic">View Leasing</button>
+                        </div>
+                        <div class="panel-image-container img-reveal">
+                            <img src="assets/images/luxury.png" alt="Luxury Retail">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 2: Dining -->
+                <div class="horizontal-panel" id="dining">
+                    <div class="panel-content">
+                        <div class="panel-text">
+                            <h2 class="section-label">Dining & Lifestyle</h2>
+                            <h3 class="section-heading">A Culinary Journey.</h3>
+                            <p class="section-desc">Experiential dining zones blending world-class gastronomy with immersive atmospheres, driving extended dwell times.</p>
+                            <button class="btn btn-outline magnetic">Explore F&B</button>
+                        </div>
+                        <div class="panel-image-container img-reveal">
+                            <img src="assets/images/dining.png" alt="Upscale Dining">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 3: Entertainment -->
+                <div class="horizontal-panel" id="entertainment">
+                    <div class="panel-content">
+                        <div class="panel-text">
+                            <h2 class="section-label text-accent">Attractions</h2>
+                            <h3 class="section-heading">The Ultimate Playground.</h3>
+                            <p class="section-desc">A colossal indoor theme park and marine sanctuary. This is what separates us from traditional retail.</p>
+                            <button class="btn btn-outline magnetic">Discover Parks</button>
+                        </div>
+                        <div class="panel-image-container img-reveal">
+                            <img src="assets/images/entertainment.png" alt="Amusement Park">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 4: Events -->
+                <div class="horizontal-panel" id="events">
+                    <div class="panel-content">
+                        <div class="panel-text">
+                            <h2 class="section-label">Events & Platform</h2>
+                            <h3 class="section-heading">The Global Stage.</h3>
+                            <p class="section-desc">From massive live concerts to global product launches. A broadcast platform and cultural epicenter.</p>
+                            <button class="btn btn-outline magnetic">Book a Venue</button>
+                        </div>
+                        <div class="panel-image-container img-reveal">
+                            <img src="assets/images/events.png" alt="Live Events">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Large Typography Parallax (Saint Laurent / Apple Style) -->
+        <section class="large-typography-section">
+            <div class="marquee-container">
+                <div class="marquee-text">SHAPE THE FUTURE OF RETAIL — JOIN THE GLOBAL STAGE —</div>
+                <div class="marquee-text">SHAPE THE FUTURE OF RETAIL — JOIN THE GLOBAL STAGE —</div>
+            </div>
+            <div class="marquee-container reverse">
+                <div class="marquee-text">40 MILLION VISITORS — UNMATCHED SCALE —</div>
+                <div class="marquee-text">40 MILLION VISITORS — UNMATCHED SCALE —</div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container text-center">
+                <h2 class="cta-heading gs-reveal">Ready to make history?</h2>
+                <div class="cta-buttons gs-reveal">
+                    <button class="btn btn-primary btn-large magnetic">Inquire About Leasing</button>
+                    <button class="btn btn-outline btn-large magnetic">Sponsorship Details</button>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="minimal-footer">
+            <div class="container">
+                <div class="footer-top">
+                    <div class="footer-logo">MOA</div>
+                    <div class="footer-contact">commercial@moa.com <br> +1 800 555 0199</div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Mall of America. All rights reserved.</p>
+                    <div class="footer-links">
+                        <a href="#">Privacy</a>
+                        <a href="#">Terms</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Scripts -->
+    <script>lucide.createIcons();</script>
+    <script src="js/main.js"></script>
+</body>
+</html>
