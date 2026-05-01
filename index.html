@@ -44,89 +44,72 @@
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
 
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="logo magnetic">
+    <!-- Side Deck Navigation (DigiDeck Style) -->
+    <aside class="deck-sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
                 <span class="logo-text">MOA</span>
-                <span class="logo-subtext">MALL OF AMERICA</span>
-            </div>
-            <div class="nav-links">
-                <a href="#overview" class="magnetic">The Property</a>
-                <a href="#scale" class="magnetic">Intelligence</a>
-                <a href="#luxury" class="magnetic">The Avenue</a>
-                <a href="#dining" class="magnetic">Cuisine</a>
-                <a href="#entertainment" class="magnetic">Attractions</a>
-                <a href="#events" class="magnetic">Platform</a>
-            </div>
-            <div class="nav-actions magnetic">
-                <button class="btn btn-primary">Partner With Us</button>
+                <span class="logo-subtext">SALES DECK</span>
             </div>
         </div>
-    </nav>
+        <nav class="sidebar-nav">
+            <div class="nav-item active" data-section="#overview">
+                <span class="nav-number">01</span>
+                <span class="nav-text">Executive Intro</span>
+            </div>
+            <div class="nav-item" data-section="#scale">
+                <span class="nav-number">02</span>
+                <span class="nav-text">Market Intelligence</span>
+            </div>
+            <div class="nav-item" data-section="#luxury">
+                <span class="nav-number">03</span>
+                <span class="nav-text">The Avenue (Luxury)</span>
+            </div>
+            <div class="nav-item" data-section="#dining">
+                <span class="nav-number">04</span>
+                <span class="nav-text">Culinary Excellence</span>
+            </div>
+            <div class="nav-item" data-section="#entertainment">
+                <span class="nav-number">05</span>
+                <span class="nav-text">Entertainment Platforms</span>
+            </div>
+            <div class="nav-item" data-section="#events">
+                <span class="nav-number">06</span>
+                <span class="nav-text">Venue & Production</span>
+            </div>
+            <div class="nav-item" data-section=".cta-section">
+                <span class="nav-number">07</span>
+                <span class="nav-text">Connect & Partner</span>
+            </div>
+        </nav>
+        <div class="sidebar-footer">
+            <button class="btn btn-primary btn-small partner-trigger">Partner With Us</button>
+        </div>
+    </aside>
 
-    <!-- Deck Navigation -->
-    <div class="deck-nav">
-        <div class="deck-nav-item active" data-slide="0" data-section="#overview">
-            <span class="nav-label">The Property</span>
-            <span class="nav-dot"></span>
-        </div>
-        <div class="deck-nav-item" data-slide="1" data-section="#scale">
-            <span class="nav-label">Intelligence</span>
-            <span class="nav-dot"></span>
-        </div>
-        <div class="deck-nav-item" data-slide="2" data-section="#luxury">
-            <span class="nav-label">The Avenue</span>
-            <span class="nav-dot"></span>
-        </div>
-        <div class="deck-nav-item" data-slide="3" data-section="#dining">
-            <span class="nav-label">Cuisine</span>
-            <span class="nav-dot"></span>
-        </div>
-        <div class="deck-nav-item" data-slide="4" data-section="#entertainment">
-            <span class="nav-label">Attractions</span>
-            <span class="nav-dot"></span>
-        </div>
-        <div class="deck-nav-item" data-slide="5" data-section="#events">
-            <span class="nav-label">Platform</span>
-            <span class="nav-dot"></span>
-        </div>
-        <div class="deck-nav-item" data-slide="6" data-section=".cta-section">
-            <span class="nav-label">Connect</span>
-            <span class="nav-dot"></span>
-        </div>
-    </div>
-
-    <!-- Slide Counter -->
-    <div class="slide-counter">
-        <span class="current">01</span>
-        <span class="separator">/</span>
-        <span class="total">07</span>
-    </div>
-
-    <!-- Scroll Progress -->
-    <div class="scroll-progress"></div>
-
-    <main>
-        <!-- Hero Section (Apple Style Expanding Media) -->
-        <section id="overview" class="hero">
-            <div class="hero-sticky-container">
-                <div class="hero-media-wrapper">
-                    <img src="assets/images/hero_v2.png" alt="Mall of America Exterior" class="hero-img">
-                    <div class="hero-overlay"></div>
-                </div>
-                <div class="hero-content">
-                    <h1 class="hero-title gs-reveal">More Than A Destination.<br><span class="text-accent">It's A City.</span></h1>
-                    <p class="hero-subtitle gs-reveal">Retail. Dining. Entertainment. A global platform for the world's most ambitious brands.</p>
+    <main class="deck-main">
+        <!-- Hero Slide -->
+        <section id="overview" class="deck-slide slide-hero">
+            <div class="slide-indicator">CHAPTER 01</div>
+            <div class="slide-media">
+                <img src="assets/images/hero_v2.png" alt="Mall of America Exterior">
+                <div class="media-overlay"></div>
+            </div>
+            <div class="slide-content">
+                <h1 class="hero-title gs-reveal">The Future of Destination Retail.</h1>
+                <p class="hero-subtitle gs-reveal">A cinematic overview for prospective partners and tenants.</p>
+                <div class="slide-actions gs-reveal">
+                    <button class="btn btn-outline next-slide">Explore the Scale <i data-lucide="chevron-down"></i></button>
                 </div>
             </div>
         </section>
 
-        <!-- Scale Data (Tesla Style Clean Grid) -->
-        <section id="scale" class="data-section">
-            <div class="container">
+        <!-- Intelligence Slide -->
+        <section id="scale" class="deck-slide">
+            <div class="slide-indicator">CHAPTER 02</div>
+            <div class="slide-content container">
                 <div class="section-header">
-                    <h2 class="section-label gs-reveal">Why This Property</h2>
+                    <h2 class="section-label gs-reveal">Market Intelligence</h2>
                     <h3 class="section-heading gs-reveal">Scale That Defies Gravity.</h3>
                 </div>
                 
@@ -155,70 +138,72 @@
             </div>
         </section>
 
-        <!-- Horizontal Scroll Section (Hermes/Gucci Style) -->
-        <section class="horizontal-scroll-section" id="horizontal-scroll">
-            <div class="horizontal-container">
-                
-                <!-- Panel 1: Luxury -->
-                <div class="horizontal-panel" id="luxury">
-                    <div class="panel-content">
-                        <div class="panel-text">
-                            <h2 class="section-label">The Avenue at MOA</h2>
-                            <h3 class="section-heading">The Height of Luxury.</h3>
-                            <p class="section-desc">A curated sanctuary of the world's most coveted fashion houses—from Hermès to Gucci. We provide the architectural canvas for your brand's flagship vision.</p>
-                            <button class="btn btn-outline magnetic">View Leasing</button>
-                        </div>
-                        <div class="panel-image-container img-reveal">
-                            <img src="assets/images/luxury_v2.png" alt="Luxury Retail">
-                        </div>
-                    </div>
-                </div>
+        <!-- Experience Gallery (Consolidated Horizontal into Slides) -->
+        <section id="luxury" class="deck-slide">
+            <div class="slide-indicator">CHAPTER 03</div>
+            <div class="slide-media">
+                <img src="assets/images/luxury_v2.png" alt="The Avenue">
+                <div class="media-overlay"></div>
+            </div>
+            <div class="slide-content">
+                <h2 class="section-label">03 — Luxury</h2>
+                <h3 class="section-heading">The Avenue at MOA</h3>
+                <p class="section-desc">A curated sanctuary of the world's most coveted fashion houses—from Hermès to Gucci.</p>
+                <button class="btn btn-outline partner-trigger">Inquire About Leasing</button>
+            </div>
+        </section>
 
-                <!-- Panel 2: Dining -->
-                <div class="horizontal-panel" id="dining">
-                    <div class="panel-content">
-                        <div class="panel-text">
-                            <h2 class="section-label">Dining & Lifestyle</h2>
-                            <h3 class="section-heading">A Culinary Journey.</h3>
-                            <p class="section-desc">Experiential dining zones blending world-class gastronomy with immersive atmospheres, driving extended dwell times.</p>
-                            <button class="btn btn-outline magnetic">Explore F&B</button>
-                        </div>
-                        <div class="panel-image-container img-reveal">
-                            <img src="assets/images/dining.png" alt="Upscale Dining">
-                        </div>
-                    </div>
-                </div>
+        <section id="dining" class="deck-slide">
+            <div class="slide-indicator">CHAPTER 04</div>
+            <div class="slide-media">
+                <img src="assets/images/dining.png" alt="Cuisine">
+                <div class="media-overlay"></div>
+            </div>
+            <div class="slide-content">
+                <h2 class="section-label">04 — Culinary</h2>
+                <h3 class="section-heading">Global Gastronomy</h3>
+                <p class="section-desc">Experiential dining zones blending world-class gastronomy with immersive atmospheres.</p>
+                <button class="btn btn-outline partner-trigger">Explore F&B Opportunities</button>
+            </div>
+        </section>
 
-                <!-- Panel 3: Entertainment -->
-                <div class="horizontal-panel" id="entertainment">
-                    <div class="panel-content">
-                        <div class="panel-text">
-                            <h2 class="section-label text-accent">Nickelodeon Universe</h2>
-                            <h3 class="section-heading">Entertainment Without Borders.</h3>
-                            <p class="section-desc">Home to the largest indoor theme park in the Western Hemisphere. A unique convergence of retail and adrenaline that drives unmatched dwell time.</p>
-                            <button class="btn btn-outline magnetic">Discover Parks</button>
-                        </div>
-                        <div class="panel-image-container img-reveal">
-                            <img src="assets/images/entertainment_v2.png" alt="Amusement Park">
-                        </div>
-                    </div>
-                </div>
+        <section id="entertainment" class="deck-slide">
+            <div class="slide-indicator">CHAPTER 05</div>
+            <div class="slide-media">
+                <img src="assets/images/entertainment_v2.png" alt="Nickelodeon Universe">
+                <div class="media-overlay"></div>
+            </div>
+            <div class="slide-content">
+                <h2 class="section-label">05 — Attractions</h2>
+                <h3 class="section-heading">The Power of Play</h3>
+                <p class="section-desc">Home to the largest indoor theme park in the Western Hemisphere. Unmatched dwell times.</p>
+                <button class="btn btn-outline partner-trigger">Sponsorship Details</button>
+            </div>
+        </section>
 
-                <!-- Panel 4: Events -->
-                <div class="horizontal-panel" id="events">
-                    <div class="panel-content">
-                        <div class="panel-text">
-                            <h2 class="section-label">Events & Platform</h2>
-                            <h3 class="section-heading">The Global Stage.</h3>
-                            <p class="section-desc">From massive live concerts to global product launches. A broadcast platform and cultural epicenter.</p>
-                            <button class="btn btn-outline magnetic">Book a Venue</button>
-                        </div>
-                        <div class="panel-image-container img-reveal">
-                            <img src="assets/images/events_v2.png" alt="Live Events">
-                        </div>
-                    </div>
-                </div>
+        <section id="events" class="deck-slide">
+            <div class="slide-indicator">CHAPTER 06</div>
+            <div class="slide-media">
+                <img src="assets/images/events_v2.png" alt="The Platform">
+                <div class="media-overlay"></div>
+            </div>
+            <div class="slide-content">
+                <h2 class="section-label">06 — Venue</h2>
+                <h3 class="section-heading">The Global Stage</h3>
+                <p class="section-desc">A world-class broadcast platform and cultural epicenter for celebrity appearances and global launches.</p>
+                <button class="btn btn-primary" id="open-events-detail">View Venue Specs</button>
+            </div>
+        </section>
 
+        <section class="deck-slide cta-section">
+            <div class="slide-indicator">CHAPTER 07</div>
+            <div class="slide-content text-center">
+                <h2 class="cta-heading gs-reveal">Ready to partner?</h2>
+                <p class="section-desc gs-reveal">Join the world's most ambitious brands at Mall of America.</p>
+                <div class="cta-buttons gs-reveal">
+                    <button class="btn btn-primary btn-large partner-trigger">Contact Leasing Team</button>
+                    <button class="btn btn-outline btn-large partner-trigger">Corporate Sponsorship</button>
+                </div>
             </div>
         </section>
 
