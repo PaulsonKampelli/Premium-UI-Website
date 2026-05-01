@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mall of America - The Ultimate Destination</title>
+    <meta name="description" content="Explore Mall of America: The world's premier retail, dining, and entertainment destination.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- GSAP & Lenis -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <!-- SplitType for Typography Animation -->
+    <script src="https://unpkg.com/split-type"></script>
+</head>
+<body class="loading">
+    
+    <!-- Preloader -->
+    <div id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <span class="l-serif">MOA</span>
+                <span class="l-sans">MALL OF AMERICA</span>
+            </div>
+            <div class="loader-progress-container">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo magnetic">
+                <span class="logo-text">MOA</span>
+                <span class="logo-subtext">MALL OF AMERICA</span>
+            </div>
+            <div class="nav-links">
+                <a href="#overview" class="magnetic">The Property</a>
+                <a href="#scale" class="magnetic">Intelligence</a>
+                <a href="#luxury" class="magnetic">The Avenue</a>
+                <a href="#dining" class="magnetic">Cuisine</a>
+                <a href="#entertainment" class="magnetic">Attractions</a>
+                <a href="#events" class="magnetic">Platform</a>
+            </div>
+            <div class="nav-actions magnetic">
+                <button class="btn btn-primary">Partner With Us</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Deck Navigation -->
+    <div class="deck-nav">
+        <div class="deck-nav-item active" data-slide="0" data-section="#overview">
+            <span class="nav-label">The Property</span>
+            <span class="nav-dot"></span>
+        </div>
+        <div class="deck-nav-item" data-slide="1" data-section="#scale">
+            <span class="nav-label">Intelligence</span>
+            <span class="nav-dot"></span>
+        </div>
+        <div class="deck-nav-item" data-slide="2" data-section="#luxury">
+            <span class="nav-label">The Avenue</span>
+            <span class="nav-dot"></span>
+        </div>
+        <div class="deck-nav-item" data-slide="3" data-section="#dining">
+            <span class="nav-label">Cuisine</span>
+            <span class="nav-dot"></span>
+        </div>
+        <div class="deck-nav-item" data-slide="4" data-section="#entertainment">
+            <span class="nav-label">Attractions</span>
+            <span class="nav-dot"></span>
+        </div>
+        <div class="deck-nav-item" data-slide="5" data-section="#events">
+            <span class="nav-label">Platform</span>
+            <span class="nav-dot"></span>
+        </div>
+        <div class="deck-nav-item" data-slide="6" data-section=".cta-section">
+            <span class="nav-label">Connect</span>
+            <span class="nav-dot"></span>
+        </div>
+    </div>
+
+    <!-- Slide Counter -->
+    <div class="slide-counter">
+        <span class="current">01</span>
+        <span class="separator">/</span>
+        <span class="total">07</span>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress"></div>
+
+    <main>
+        <!-- Hero Section (Apple Style Expanding Media) -->
+        <section id="overview" class="hero">
+            <div class="hero-sticky-container">
+                <div class="hero-media-wrapper">
+                    <img src="assets/images/hero_v2.png" alt="Mall of America Exterior" class="hero-img">
+                    <div class="hero-overlay"></div>
+                </div>
+                <div class="hero-content">
+                    <h1 class="hero-title gs-reveal">More Than A Destination.<br><span class="text-accent">It's A City.</span></h1>
+                    <p class="hero-subtitle gs-reveal">Retail. Dining. Entertainment. A global platform for the world's most ambitious brands.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scale Data (Tesla Style Clean Grid) -->
+        <section id="scale" class="data-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-label gs-reveal">Why This Property</h2>
+                    <h3 class="section-heading gs-reveal">Scale That Defies Gravity.</h3>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value gs-counter" data-target="40">0</div>
+                        <div class="stat-label">Million Annual Visitors</div>
+                        <div class="stat-line"></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value gs-counter" data-target="5.6">0</div>
+                        <div class="stat-label">Million Square Feet</div>
+                        <div class="stat-line"></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value gs-counter" data-target="520">0</div>
+                        <div class="stat-label">Retail Concepts</div>
+                        <div class="stat-line"></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value gs-counter" data-target="2.5">0</div>
+                        <div class="stat-label">Days Average Stay</div>
+                        <div class="stat-line"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Horizontal Scroll Section (Hermes/Gucci Style) -->
+        <section class="horizontal-scroll-section" id="horizontal-scroll">
+            <div class="horizontal-container">
+                
+                <!-- Panel 1: Luxury -->
+                <div class="horizontal-panel" id="luxury">
+                    <div class="panel-content">
+                        <div class="panel-text">
+                            <h2 class="section-label">The Avenue at MOA</h2>
+                            <h3 class="section-heading">The Height of Luxury.</h3>
+                            <p class="section-desc">A curated sanctuary of the world's most coveted fashion houses—from Hermès to Gucci. We provide the architectural canvas for your brand's flagship vision.</p>
+                            <button class="btn btn-outline magnetic">View Leasing</button>
+                        </div>
+                        <div class="panel-image-container img-reveal">
+                            <img src="assets/images/luxury_v2.png" alt="Luxury Retail">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 2: Dining -->
+                <div class="horizontal-panel" id="dining">
+                    <div class="panel-content">
+                        <div class="panel-text">
+                            <h2 class="section-label">Dining & Lifestyle</h2>
+                            <h3 class="section-heading">A Culinary Journey.</h3>
+                            <p class="section-desc">Experiential dining zones blending world-class gastronomy with immersive atmospheres, driving extended dwell times.</p>
+                            <button class="btn btn-outline magnetic">Explore F&B</button>
+                        </div>
+                        <div class="panel-image-container img-reveal">
+                            <img src="assets/images/dining.png" alt="Upscale Dining">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 3: Entertainment -->
+                <div class="horizontal-panel" id="entertainment">
+                    <div class="panel-content">
+                        <div class="panel-text">
+                            <h2 class="section-label text-accent">Nickelodeon Universe</h2>
+                            <h3 class="section-heading">Entertainment Without Borders.</h3>
+                            <p class="section-desc">Home to the largest indoor theme park in the Western Hemisphere. A unique convergence of retail and adrenaline that drives unmatched dwell time.</p>
+                            <button class="btn btn-outline magnetic">Discover Parks</button>
+                        </div>
+                        <div class="panel-image-container img-reveal">
+                            <img src="assets/images/entertainment_v2.png" alt="Amusement Park">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 4: Events -->
+                <div class="horizontal-panel" id="events">
+                    <div class="panel-content">
+                        <div class="panel-text">
+                            <h2 class="section-label">Events & Platform</h2>
+                            <h3 class="section-heading">The Global Stage.</h3>
+                            <p class="section-desc">From massive live concerts to global product launches. A broadcast platform and cultural epicenter.</p>
+                            <button class="btn btn-outline magnetic">Book a Venue</button>
+                        </div>
+                        <div class="panel-image-container img-reveal">
+                            <img src="assets/images/events_v2.png" alt="Live Events">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Large Typography Parallax (Saint Laurent / Apple Style) -->
+        <section class="large-typography-section">
+            <div class="marquee-container">
+                <div class="marquee-text">SHAPE THE FUTURE OF RETAIL — JOIN THE GLOBAL STAGE —</div>
+                <div class="marquee-text">SHAPE THE FUTURE OF RETAIL — JOIN THE GLOBAL STAGE —</div>
+            </div>
+            <div class="marquee-container reverse">
+                <div class="marquee-text">40 MILLION VISITORS — UNMATCHED SCALE —</div>
+                <div class="marquee-text">40 MILLION VISITORS — UNMATCHED SCALE —</div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container text-center">
+                <h2 class="cta-heading gs-reveal">Ready to make history?</h2>
+                <div class="cta-buttons gs-reveal">
+                    <button class="btn btn-primary btn-large magnetic">Inquire About Leasing</button>
+                    <button class="btn btn-outline btn-large magnetic">Sponsorship Details</button>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="minimal-footer">
+            <div class="container">
+                <div class="footer-top">
+                    <div class="footer-logo">MOA</div>
+                    <div class="footer-contact">commercial@moa.com <br> +1 800 555 0199</div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Mall of America. All rights reserved.</p>
+                    <div class="footer-links">
+                        <a href="#">Privacy</a>
+                        <a href="#">Terms</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+    
+    <!-- Events Detail Module (Expandable Architecture) -->
+    <div class="module-overlay" id="events-module">
+        <div class="module-close magnetic" id="close-module">
+            <i data-lucide="x"></i>
+        </div>
+        <div class="module-content">
+            <div class="container">
+                <div class="module-header">
+                    <h2 class="module-label">Expandable Architecture</h2>
+                    <h3 class="module-title">The Global Stage Details</h3>
+                </div>
+                
+                <div class="module-grid">
+                    <div class="module-info">
+                        <p class="module-desc">Mall of America is more than a shopping center; it's a world-class broadcast platform and event destination. With over 400 events annually, we offer unparalleled reach.</p>
+                        
+                        <div class="venue-stats">
+                            <div class="v-stat">
+                                <span class="v-label">Rotunda Capacity</span>
+                                <span class="v-value">5,000+</span>
+                            </div>
+                            <div class="v-stat">
+                                <span class="v-label">Annual Events</span>
+                                <span class="v-value">400+</span>
+                            </div>
+                            <div class="v-stat">
+                                <span class="v-label">Broadcast Ready</span>
+                                <span class="v-value">Full Fiber</span>
+                            </div>
+                        </div>
+
+                        <div class="venue-list">
+                            <div class="venue-item">
+                                <h4>The Rotunda</h4>
+                                <p>Our flagship 4-level atrium. Perfect for celebrity appearances, product launches, and massive public activations.</p>
+                            </div>
+                            <div class="venue-item">
+                                <h4>Executive Center</h4>
+                                <p>Luxury corporate space for private meetings, press conferences, and intimate product showcases.</p>
+                            </div>
+                            <div class="venue-item">
+                                <h4>The Park Stage</h4>
+                                <p>Unique performance space within Nickelodeon Universe, offering a high-energy backdrop for youth-focused brands.</p>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary">Download Production Guide</button>
+                    </div>
+                    <div class="module-gallery">
+                        <div class="gallery-item"><img src="assets/images/events_v2.png" alt="Past Event"></div>
+                        <div class="gallery-item"><img src="assets/images/hero_v2.png" alt="Past Event"></div>
+                        <div class="gallery-item"><img src="assets/images/entertainment_v2.png" alt="Past Event"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Inquiry Module -->
+    <div class="module-overlay" id="inquiry-module">
+        <div class="module-close magnetic" id="close-inquiry">
+            <i data-lucide="x"></i>
+        </div>
+        <div class="module-content">
+            <div class="container">
+                <div class="module-header text-center">
+                    <h2 class="module-label">Partner With Us</h2>
+                    <h3 class="module-title">Secure Your Place At MOA</h3>
+                </div>
+                
+                <form class="inquiry-form glass">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label>Company</label>
+                            <input type="text" placeholder="Luxury Brands Inc.">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" placeholder="john@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Inquiry Type</label>
+                            <select>
+                                <option>Retail Leasing</option>
+                                <option>Sponsorship</option>
+                                <option>Event Booking</option>
+                                <option>Media Partnership</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group full-width">
+                        <label>Your Vision</label>
+                        <textarea placeholder="Tell us how you want to activate at MOA..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large">Submit Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>lucide.createIcons();</script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+/* 
+ * GSAP Pre-Animation States & Utilities
+ */
+
+/* Hide elements before GSAP initializes them */
+.gs-reveal {
+    visibility: hidden;
+}
+
+/* SplitType Line/Char masking setup */
+.line {
+    overflow: hidden;
+}
+
+/* Progress bar */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--text-primary);
+    z-index: 9999;
+    transform-origin: left;
+}
+
+/* Image reveal overlay */
+.img-reveal {
+    position: relative;
+}
+
+.img-reveal::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-primary);
+    z-index: 2;
+    transform-origin: right;
+}
+
+/* Magnetic Items (Will be handled by JS, but need positioning) */
+.magnetic {
+    display: inline-block;
+    will-change: transform;
+}
