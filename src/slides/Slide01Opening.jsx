@@ -9,7 +9,10 @@ const Slide01Opening = ({ isActive, onNext }) => {
   return (
     <div className="relative w-full h-full overflow-hidden flex items-center justify-center">
       {/* YouTube Background */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden scale-110">
+      <div 
+        className="absolute inset-0 pointer-events-none overflow-hidden scale-110 bg-cover bg-center"
+        style={{ backgroundImage: 'url(/assets/grand-entrance.png)' }}
+      >
         <iframe 
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-[120vw] h-[120vh]"
           src="https://www.youtube.com/embed/ZqvAzBGQoAc?autoplay=1&mute=1&loop=1&playlist=ZqvAzBGQoAc&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1"

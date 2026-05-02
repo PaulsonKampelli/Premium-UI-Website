@@ -1,86 +1,135 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Sidebar from './Sidebar';
 import Modal from './Modal';
 import { useKeyboardNav } from '../hooks/useKeyboardNav';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Maximize, Play, Info } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const DeckShell = ({ slides }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [direction, setDirection] = useState(0);
   const [modalData, setModalData] = useState({ isOpen: false, title: '' });
 
   const openModal = (title) => setModalData({ isOpen: true, title });
   const closeModal = () => setModalData({ isOpen: false, title: '' });
 
   const nextSlide = () => {
-    if (currentSlide < slides.length - 1) setCurrentSlide(prev => prev + 1);
+    if (currentSlide < slides.length - 1) {
+      setDirection(1);
+      setCurrentSlide(prev => prev + 1);
+    }
   };
 
   const prevSlide = () => {
-    if (currentSlide > 0) setCurrentSlide(prev => prev - 1);
+    if (currentSlide > 0) {
+      setDirection(-1);
+      setCurrentSlide(prev => prev - 1);
+    }
+  };
+
+  const jumpToSlide = (index) => {
+    setDirection(index > currentSlide ? 1 : -1);
+    setCurrentSlide(index);
   };
 
   useKeyboardNav(nextSlide, prevSlide);
 
+  // Variants for the sliding transition
+  const variants = {
+    enter: (direction) => ({
+      x: direction > 0 ? '100%' : '-100%',
+      opacity: 0,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+    },
+    exit: (direction) => ({
+      x: direction < 0 ? '100%' : '-100%',
+      opacity: 0,
+    },
+  };
+
+  const SlideComponent = slides[currentSlide].component;
+
   return (
-    <div className="flex bg-bg-primary text-white overflow-hidden h-screen select-none">
+    <div className="flex bg-bg-primary text-white overflow-hidden h-screen select-none font-inter">
       <Sidebar 
         slides={slides} 
         current={currentSlide} 
-        onNav={setCurrentSlide} 
+        onNav={jumpToSlide} 
       />
 
-      <main className="flex-grow ml-[200px] relative">
+      <main className="flex-grow ml-[200px] relative bg-[#050505]">
+        {/* Top Progress Bar */}
+        <div className="absolute top-0 left-0 right-0 h-1 bg-white/5 z-50">
+          <motion.div 
+            className="h-full bg-gold"
+            initial={{ width: 0 }}
+            animate={{ width: `${((currentSlide + 1) / slides.length) * 100}%` }}
+            transition={{ type: 'spring', damping: 20 }}
+          />
+        </div>
+
         <div className="w-full h-full relative overflow-hidden">
-          {slides.map((slide, i) => {
-            const SlideComponent = slide.component;
-            return (
-              <div
-                key={i}
-                className="absolute inset-0 transition-opacity duration-600 ease-in-out"
-                style={{
-                  opacity: i === currentSlide ? 1 : 0,
-                  pointerEvents: i === currentSlide ? 'auto' : 'none',
-                  zIndex: i === currentSlide ? 10 : 0
-                }}
-              >
-                <SlideComponent 
-                  isActive={i === currentSlide} 
-                  onInquire={openModal}
-                  onNext={nextSlide}
-                />
-              </div>
-            );
-          })}
+          <AnimatePresence initial={false} custom={direction}>
+            <motion.div
+              key={currentSlide}
+              custom={direction}
+              variants={variants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{
+                x: { type: "spring", stiffness: 300, damping: 30 },
+                opacity: { duration: 0.4 }
+              }}
+              className="absolute inset-0"
+            >
+              <SlideComponent 
+                isActive={true} 
+                onInquire={openModal}
+                onNext={nextSlide}
+              />
+            </motion.div>
+          </AnimatePresence>
         </div>
 
-        {/* Slide Counter */}
-        <div className="absolute bottom-10 right-10 z-[50]">
-          <span className="text-gray-text font-inter text-xs tracking-widest font-bold">
-            {String(currentSlide + 1).padStart(2, '0')} / {String(slides.length).padStart(2, '0')}
-          </span>
-        </div>
+        {/* Deck Navigation Controls (Digideck Style) */}
+        <div className="absolute bottom-10 right-10 flex items-center space-x-6 z-[100] bg-black/40 backdrop-blur-md border border-white/10 p-2 pl-6">
+          <div className="flex flex-col items-end">
+            <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-gold mb-1">Slide</span>
+            <span className="text-xl font-display font-bold leading-none">
+              {String(currentSlide + 1).padStart(2, '0')} <span className="text-white/30 text-sm font-inter">/ {String(slides.length).padStart(2, '0')}</span>
+            </span>
+          </div>
 
-        {/* Navigation Arrows */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex items-center space-x-12 z-[50]">
-          {currentSlide > 0 && (
+          <div className="flex border-l border-white/10 ml-4">
             <button 
               onClick={prevSlide}
-              className="text-gray-text hover:text-gold transition-colors flex items-center space-x-2 group"
+              disabled={currentSlide === 0}
+              className={`p-4 transition-colors ${currentSlide === 0 ? 'text-white/10' : 'text-white hover:bg-gold hover:text-black'}`}
             >
-              <ChevronLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
-              <span className="text-[10px] uppercase tracking-widest font-bold">Prev</span>
+              <ChevronLeft size={24} />
             </button>
-          )}
-          
-          {currentSlide < slides.length - 1 && (
             <button 
               onClick={nextSlide}
-              className="text-gray-text hover:text-gold transition-colors flex items-center space-x-2 group"
+              disabled={currentSlide === slides.length - 1}
+              className={`p-4 border-l border-white/10 transition-colors ${currentSlide === slides.length - 1 ? 'text-white/10' : 'text-white hover:bg-gold hover:text-black'}`}
             >
-              <span className="text-[10px] uppercase tracking-widest font-bold">Next</span>
-              <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
+              <ChevronRight size={24} />
             </button>
-          )}
+          </div>
+        </div>
+
+        {/* Utility Bar */}
+        <div className="absolute top-10 right-10 flex space-x-4 z-[100]">
+           <button onClick={() => window.location.reload()} className="p-2 text-white/30 hover:text-white transition-colors" title="Reset Presentation">
+              <Play size={16} />
+           </button>
+           <button onClick={() => document.documentElement.requestFullscreen()} className="p-2 text-white/30 hover:text-white transition-colors" title="Full Screen">
+              <Maximize size={16} />
+           </button>
         </div>
       </main>
 
