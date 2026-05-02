@@ -47,7 +47,7 @@ const DeckShell = ({ slides }) => {
     exit: (direction) => ({
       x: direction < 0 ? '100%' : '-100%',
       opacity: 0,
-    },
+    }),
   };
 
   const SlideComponent = slides[currentSlide].component;
