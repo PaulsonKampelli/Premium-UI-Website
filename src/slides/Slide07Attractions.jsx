@@ -51,9 +51,9 @@ const Slide07Attractions = ({ isActive, onInquire }) => {
   return (
     <SlideWrapper isActive={isActive} className="relative">
       <EyebrowText>Attractions & Entertainment</EyebrowText>
-      <h2 className="headline-lg font-display text-white mb-12">No Mall on Earth Competes With This</h2>
+      <h2 className="headline-lg font-display text-white mb-6">No Mall on Earth Competes With This</h2>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-6 mb-6 md:mb-12">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-6 mb-6 md:mb-6">
         {attractions.map((attr, i) => (
           <AttractionCard key={i} {...attr} index={i} />
         ))}
@@ -73,7 +73,7 @@ const Slide07Attractions = ({ isActive, onInquire }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="absolute inset-0 bg-black/95 z-[200] flex items-center justify-center p-12"
+            className="absolute inset-0 bg-black/95 z-[200] flex items-center justify-center p-6"
           >
             <button 
               onClick={() => setShowVideo(false)}

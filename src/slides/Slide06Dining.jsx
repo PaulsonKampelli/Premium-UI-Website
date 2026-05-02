@@ -30,7 +30,7 @@ const Slide06Dining = ({ isActive }) => {
 
   return (
     <div className="w-full h-full relative overflow-y-auto md:overflow-hidden flex flex-col bg-[#080808]">
-      <div className="relative md:absolute top-0 md:top-20 left-0 right-0 z-10 text-center pt-24 md:pt-10 px-6">
+      <div className="relative md:absolute top-0 md:top-20 left-0 right-0 z-10 text-center pt-12 md:pt-10 px-6">
         <EyebrowText>Dining & Lifestyle</EyebrowText>
         <h2 className="headline-lg font-display text-white">Beyond the Food Court</h2>
       </div>
@@ -43,7 +43,7 @@ const Slide06Dining = ({ isActive }) => {
             animate={isActive ? { height: "100%", opacity: 1 } : { height: 0, opacity: 0 }}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: i * 0.1 }}
             style={{ backgroundColor: col.bg }}
-            className="flex-1 flex flex-col items-center justify-center text-center p-8 md:p-12 overflow-hidden py-16 md:py-0"
+            className="flex-1 flex flex-col items-center justify-center text-center p-8 md:p-6 overflow-hidden py-16 md:py-0"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}

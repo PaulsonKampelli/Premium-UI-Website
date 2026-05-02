@@ -20,9 +20,9 @@ const Slide11SocialProof = ({ isActive }) => {
   return (
     <SlideWrapper isActive={isActive} className="items-center text-center">
       <EyebrowText>Trusted by the World's Leading Brands</EyebrowText>
-      <h2 className="headline-lg font-display text-white mb-8 md:mb-20">The Brands That Chose American Dream</h2>
+      <h2 className="headline-lg font-display text-white mb-8 md:mb-8">The Brands That Chose American Dream</h2>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-y-8 md:gap-y-12 gap-x-8 md:gap-x-20 mb-12 md:mb-24 max-w-5xl px-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-y-8 md:gap-y-12 gap-x-8 md:gap-x-20 mb-6 md:mb-10 max-w-5xl px-4">
         {brands.map((brand, i) => (
           <motion.div
             key={i}
@@ -36,7 +36,7 @@ const Slide11SocialProof = ({ isActive }) => {
         ))}
       </div>
 
-      <div className="flex flex-col md:flex-row justify-between w-full max-w-4xl border-t border-border-color pt-8 md:pt-16 px-8 gap-8 md:gap-0">
+      <div className="flex flex-col md:flex-row justify-between w-full max-w-4xl border-t border-border-color pt-8 md:pt-16 px-8 gap-4 md:gap-0">
         {stats.map((stat, i) => (
           <div key={i} className="flex flex-col items-center">
             <span className="text-gold font-display font-bold text-3xl md:text-4xl mb-1 md:mb-2">{stat.value}</span>

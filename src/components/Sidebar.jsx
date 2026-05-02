@@ -21,7 +21,7 @@ const Sidebar = ({ slides, current, onNav, isOpen }) => {
       <div className={`fixed left-0 top-0 h-screen w-[260px] md:w-[200px] bg-[#050505] border-r border-white/5 z-[100] flex flex-col py-12 transition-transform duration-500 ease-in-out ${
         isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'
       }`}>
-        <div className="px-8 mb-12">
+        <div className="px-8 mb-6">
           <h1 className="font-display text-4xl text-gold font-bold tracking-tighter">AD</h1>
           <p className="text-[9px] uppercase tracking-[0.3em] text-white/40 mt-1 font-bold">Sales Deck</p>
         </div>

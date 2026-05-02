@@ -15,9 +15,9 @@ const Slide02Scale = ({ isActive }) => {
   return (
     <SlideWrapper isActive={isActive} className="items-center text-center">
       <EyebrowText>By the Numbers</EyebrowText>
-      <h2 className="headline-lg font-display text-white mb-20">Built for a Different League</h2>
+      <h2 className="headline-lg font-display text-white mb-8">Built for a Different League</h2>
       
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 w-full max-w-6xl mx-auto mb-12 md:mb-20 px-6">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 w-full max-w-6xl mx-auto mb-6 md:mb-8 px-6">
         {stats.map((stat, i) => (
           <motion.div
             key={i}

@@ -9,16 +9,16 @@ const Slide05Luxury = ({ isActive, onInquire }) => {
 
   return (
     <SlideWrapper isActive={isActive} className="items-center text-center">
-      <div className="w-20 h-[1px] bg-gold mb-12" />
+      <div className="w-20 h-[1px] bg-gold mb-6" />
       <EyebrowText>The Luxury District</EyebrowText>
       <h2 className="headline-lg font-display text-white mb-8 italic">
         Where the World's Most Iconic Brands Choose to Grow
       </h2>
-      <p className="text-gray-text text-lg max-w-2xl mx-auto mb-16 leading-relaxed">
+      <p className="text-gray-text text-lg max-w-2xl mx-auto mb-6 leading-relaxed">
         A curated luxury corridor designed to rival Madison Avenue — with 55 million annual visitors as your captive audience.
       </p>
 
-      <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center max-w-6xl mx-auto mb-12 md:mb-20 px-6">
+      <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center max-w-6xl mx-auto mb-6 md:mb-8 px-6">
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
           animate={isActive ? { opacity: 1, scale: 1 } : {}}
@@ -47,7 +47,7 @@ const Slide05Luxury = ({ isActive, onInquire }) => {
             ))}
           </div>
           
-          <div className="grid grid-cols-1 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 gap-6 md:gap-4">
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={isActive ? { opacity: 1, x: 0 } : {}}

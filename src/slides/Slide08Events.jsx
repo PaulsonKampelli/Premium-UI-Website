@@ -78,9 +78,9 @@ const Slide08Events = ({ isActive, onInquire }) => {
   return (
     <SlideWrapper isActive={isActive} className="relative">
       <EyebrowText>Events & Programming</EyebrowText>
-      <h2 className="headline-lg font-display text-white mb-12">200+ Events a Year. One Destination.</h2>
+      <h2 className="headline-lg font-display text-white mb-6">200+ Events a Year. One Destination.</h2>
 
-      <div className="mb-16">
+      <div className="mb-6">
         <TabGroup tabs={tabs} />
       </div>
 
@@ -96,7 +96,7 @@ const Slide08Events = ({ isActive, onInquire }) => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="absolute inset-0 bg-[#0A0A0A] z-[100] p-6 md:p-24 flex flex-col pt-24"
+            className="absolute inset-0 bg-[#0A0A0A] z-[100] p-6 md:p-8 flex flex-col pt-12"
           >
             <button 
               onClick={() => { setShowDeepDive(false); setActiveVideo(null); }}
@@ -107,9 +107,9 @@ const Slide08Events = ({ isActive, onInquire }) => {
             </button>
 
             <EyebrowText>Module: Case Studies</EyebrowText>
-            <h3 className="font-display text-3xl md:text-5xl text-white mb-8 md:mb-16">Past Programming Highlights</h3>
+            <h3 className="font-display text-3xl md:text-5xl text-white mb-8 md:mb-6">Past Programming Highlights</h3>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 flex-grow overflow-y-auto pr-2 md:pr-8 custom-scrollbar">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 flex-grow overflow-y-auto pr-2 md:pr-8 custom-scrollbar">
               <CaseStudyCard 
                 eyebrow="Concert Series"
                 title="Summer Kickoff 2024"

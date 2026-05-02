@@ -37,7 +37,7 @@ const Modal = ({ isOpen, onClose, title }) => {
             initial={{ opacity: 0, scale: 0.96, x: '-50%', y: '-50%' }}
             animate={{ opacity: 1, scale: 1, x: '-50%', y: '-50%' }}
             exit={{ opacity: 0, scale: 0.96, x: '-50%', y: '-50%' }}
-            className="fixed top-1/2 left-1/2 w-[520px] max-w-[90vw] bg-[#111111] border-t-[3px] border-gold p-6 md:p-10 z-[1001]"
+            className="fixed top-1/2 left-1/2 w-[520px] max-w-[90vw] bg-[#111111] border-t-[3px] border-gold p-6 md:p-5 z-[1001]"
           >
             <button
               onClick={onClose}

@@ -50,9 +50,9 @@ const Slide09Sponsorship = ({ isActive, onInquire }) => {
   return (
     <SlideWrapper isActive={isActive}>
       <EyebrowText>Brand Partnerships</EyebrowText>
-      <h2 className="headline-lg font-display text-white mb-16">Own the Moment. Own the Audience.</h2>
+      <h2 className="headline-lg font-display text-white mb-6">Own the Moment. Own the Audience.</h2>
 
-      <div className="flex md:grid md:grid-cols-4 gap-4 md:gap-6 mb-12 md:mb-16 overflow-x-auto pb-4 snap-x custom-scrollbar w-full">
+      <div className="flex md:grid md:grid-cols-4 gap-4 md:gap-6 mb-6 md:mb-6 overflow-x-auto pb-4 snap-x custom-scrollbar w-full">
         {tiers.map((tier, i) => (
           <motion.div
             key={i}

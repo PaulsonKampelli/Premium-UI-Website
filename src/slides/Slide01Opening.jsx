@@ -30,11 +30,11 @@ const Slide01Opening = ({ isActive, onNext }) => {
       <SlideWrapper isActive={isActive} className="relative flex flex-col items-center text-center justify-center h-full px-6" style={{ backgroundColor: 'transparent' }}>
         <EyebrowText>East Rutherford, New Jersey</EyebrowText>
         <h1 className="headline-xl font-display text-white mb-4 md:mb-6 leading-tight">AMERICAN DREAM</h1>
-        <p className="subheadline text-gray-text mb-8 md:mb-12 max-w-2xl mx-auto px-4">
+        <p className="subheadline text-gray-text mb-8 md:mb-6 max-w-2xl mx-auto px-4">
           North America's Most Extraordinary Destination
         </p>
         
-        <div className="mb-8 md:mb-12">
+        <div className="mb-8 md:mb-6">
           <StatCounter end={55000000} suffix="+" label="Annual Visitors" isActive={isActive} />
         </div>
 

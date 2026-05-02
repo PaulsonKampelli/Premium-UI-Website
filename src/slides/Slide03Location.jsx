@@ -13,11 +13,11 @@ const Slide03Location = ({ isActive }) => {
 
   return (
     <div className="w-full h-full flex flex-col md:flex-row overflow-y-auto md:overflow-hidden bg-[#080808]">
-      <SlideWrapper isActive={isActive} className="w-full md:w-1/2 justify-center p-8 md:p-24 bg-black min-h-screen md:min-h-0">
+      <SlideWrapper isActive={isActive} className="w-full md:w-1/2 justify-center p-8 md:p-8 bg-black min-h-screen md:min-h-0">
         <EyebrowText>Location & Reach</EyebrowText>
-        <h2 className="headline-lg font-display text-white mb-8 md:mb-12">At the Center of Everything</h2>
+        <h2 className="headline-lg font-display text-white mb-8 md:mb-6">At the Center of Everything</h2>
         
-        <ul className="space-y-4 md:space-y-6 mb-12 md:mb-16">
+        <ul className="space-y-4 md:space-y-6 mb-6 md:mb-6">
           {["Direct access from NJ Transit, I-95, NJ Turnpike", "10 minutes from Manhattan by rail", "20M+ residents within 50-mile catchment area"].map((item, i) => (
             <motion.li 
               key={i}
