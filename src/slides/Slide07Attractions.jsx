@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SlideWrapper from '../components/SlideWrapper';
 import EyebrowText from '../components/EyebrowText';
 import { AttractionCard } from '../components/Cards';
-import { motion } from 'framer-motion';
+import { GoldButton, OutlineButton } from '../components/Buttons';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Play, X } from 'lucide-react';
 
-const Slide07Attractions = ({ isActive }) => {
+const Slide07Attractions = ({ isActive, onInquire }) => {
+  const [showVideo, setShowVideo] = useState(false);
+
   const attractions = [
     {
       icon: "🎢",
@@ -45,15 +49,50 @@ const Slide07Attractions = ({ isActive }) => {
   ];
 
   return (
-    <SlideWrapper isActive={isActive}>
+    <SlideWrapper isActive={isActive} className="relative">
       <EyebrowText>Attractions & Entertainment</EyebrowText>
       <h2 className="headline-lg font-display text-white mb-12">No Mall on Earth Competes With This</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
         {attractions.map((attr, i) => (
           <AttractionCard key={i} {...attr} index={i} />
         ))}
       </div>
+
+      <div className="flex space-x-6">
+        <GoldButton onClick={() => setShowVideo(true)} className="flex items-center space-x-2">
+          <Play size={16} fill="currentColor" />
+          <span>Experience the Energy</span>
+        </GoldButton>
+        <OutlineButton onClick={() => onInquire("Attractions Partnership")}>Partner with Us</OutlineButton>
+      </div>
+
+      <AnimatePresence>
+        {showVideo && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="absolute inset-0 bg-black/95 z-[200] flex items-center justify-center p-12"
+          >
+            <button 
+              onClick={() => setShowVideo(false)}
+              className="absolute top-12 right-12 text-white/50 hover:text-white flex items-center space-x-2 uppercase tracking-widest text-xs font-bold"
+            >
+              <X size={20} />
+              <span>Close Video</span>
+            </button>
+            <div className="w-full max-w-6xl aspect-video bg-black shadow-2xl border border-white/10">
+              <iframe 
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/8gTzX7G-PzA?autoplay=1&modestbranding=1"
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+              />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </SlideWrapper>
   );
 };
