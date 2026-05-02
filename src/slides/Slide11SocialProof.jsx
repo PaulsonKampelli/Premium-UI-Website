@@ -20,7 +20,7 @@ const Slide11SocialProof = ({ isActive }) => {
   return (
     <SlideWrapper isActive={isActive} className="items-center text-center">
       <EyebrowText>Trusted by the World's Leading Brands</EyebrowText>
-      <h2 className="headline-lg font-display text-white mb-20">The Brands That Chose American Dream</h2>
+      <h2 className="headline-lg font-display text-white mb-8 md:mb-20">The Brands That Chose American Dream</h2>
 
       <div className="grid grid-cols-2 md:grid-cols-3 gap-y-8 md:gap-y-12 gap-x-8 md:gap-x-20 mb-12 md:mb-24 max-w-5xl px-4">
         {brands.map((brand, i) => (
