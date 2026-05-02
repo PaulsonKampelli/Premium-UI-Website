@@ -27,7 +27,7 @@ const Slide01Opening = ({ isActive, onNext }) => {
       </div>
 
       {/* Content Layer */}
-      <SlideWrapper isActive={isActive} className="relative flex flex-col items-center text-center justify-center h-full px-6">
+      <SlideWrapper isActive={isActive} className="relative flex flex-col items-center text-center justify-center h-full px-6" style={{ backgroundColor: 'transparent' }}>
         <EyebrowText>East Rutherford, New Jersey</EyebrowText>
         <h1 className="headline-xl font-display text-white mb-4 md:mb-6 leading-tight">AMERICAN DREAM</h1>
         <p className="subheadline text-gray-text mb-8 md:mb-12 max-w-2xl mx-auto px-4">
