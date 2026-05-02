@@ -6,8 +6,56 @@ import { GoldButton, OutlineButton } from '../components/Buttons';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Play } from 'lucide-react';
 
+const CaseStudyCard = ({ title, eyebrow, image, videoId, isActive, onPlay }) => (
+  <div className="space-y-8">
+    <div 
+      className="aspect-video bg-bg-card border border-border-color group relative cursor-pointer overflow-hidden"
+      onClick={() => onPlay(videoId)}
+    >
+      <AnimatePresence mode="wait">
+        {isActive ? (
+          <motion.div 
+            key="video"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="absolute inset-0 bg-black"
+          >
+            <iframe 
+              className="w-full h-full"
+              src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0&modestbranding=1`}
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+            />
+          </motion.div>
+        ) : (
+          <motion.div 
+            key="image"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="absolute inset-0"
+          >
+            <div className="absolute inset-0 bg-gold/10 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center">
+              <div className="bg-gold text-black p-4 rounded-full scale-90 group-hover:scale-100 transition-transform shadow-2xl">
+                <Play fill="currentColor" size={32} />
+              </div>
+            </div>
+            <img src={image} alt={title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" />
+            <div className="absolute bottom-6 left-6 z-20">
+              <span className="text-gold text-[10px] font-bold uppercase tracking-widest block mb-2">{eyebrow}</span>
+              <h4 className="text-white font-display text-2xl">{title}</h4>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  </div>
+);
+
 const Slide08Events = ({ isActive, onInquire }) => {
   const [showDeepDive, setShowDeepDive] = useState(false);
+  const [activeVideo, setActiveVideo] = useState(null);
 
   const tabs = [
     {
@@ -51,7 +99,7 @@ const Slide08Events = ({ isActive, onInquire }) => {
             className="absolute inset-0 bg-[#0A0A0A] z-[100] p-24 flex flex-col"
           >
             <button 
-              onClick={() => setShowDeepDive(false)}
+              onClick={() => { setShowDeepDive(false); setActiveVideo(null); }}
               className="absolute top-12 right-12 text-gray-text hover:text-white flex items-center space-x-2 uppercase tracking-widest text-xs font-bold"
             >
               <X size={20} />
@@ -62,39 +110,22 @@ const Slide08Events = ({ isActive, onInquire }) => {
             <h3 className="font-display text-5xl text-white mb-16">Past Programming Highlights</h3>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 flex-grow overflow-y-auto pr-8">
-              <div className="space-y-8">
-                <div className="aspect-video bg-bg-card border border-border-color group relative cursor-pointer overflow-hidden">
-                  <div className="absolute inset-0 bg-gold/10 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center">
-                    <Play fill="currentColor" size={48} className="text-gold" />
-                  </div>
-                  <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&q=80&w=800" alt="Concert" className="w-full h-full object-cover grayscale" />
-                  <div className="absolute bottom-6 left-6 z-20">
-                    <span className="text-gold text-[10px] font-bold uppercase tracking-widest block mb-2">Concert Series</span>
-                    <h4 className="text-white font-display text-2xl">Summer Kickoff 2024</h4>
-                  </div>
-                </div>
-                <p className="text-gray-text text-sm leading-relaxed">
-                  A multi-day concert series that drew over 150,000 unique visitors. 
-                  Featured top-tier talent and 15+ local brand activations.
-                </p>
-              </div>
-
-              <div className="space-y-8">
-                <div className="aspect-video bg-bg-card border border-border-color group relative cursor-pointer overflow-hidden">
-                  <div className="absolute inset-0 bg-gold/10 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center">
-                    <Play fill="currentColor" size={48} className="text-gold" />
-                  </div>
-                  <img src="/assets/exposition-hall.png" alt="Brand Activation" className="w-full h-full object-cover grayscale" />
-                  <div className="absolute bottom-6 left-6 z-20">
-                    <span className="text-gold text-[10px] font-bold uppercase tracking-widest block mb-2">Brand Activation</span>
-                    <h4 className="text-white font-display text-2xl">Tesla Cyber-Hub Expo</h4>
-                  </div>
-                </div>
-                <p className="text-gray-text text-sm leading-relaxed">
-                  Exclusive product launch for Tesla's latest fleet. 
-                  Included custom-built 10,000 sq ft exhibition space and live-streamed keynote.
-                </p>
-              </div>
+              <CaseStudyCard 
+                eyebrow="Concert Series"
+                title="Summer Kickoff 2024"
+                image="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=crop&q=80&w=800"
+                videoId="fJ9rUzIMcZQ"
+                isActive={activeVideo === 'fJ9rUzIMcZQ'}
+                onPlay={setActiveVideo}
+              />
+              <CaseStudyCard 
+                eyebrow="Brand Activation"
+                title="Tesla Cyber-Hub Expo"
+                image="/assets/exposition-hall.png"
+                videoId="LInwYv6A7V4" 
+                isActive={activeVideo === 'LInwYv6A7V4'}
+                onPlay={setActiveVideo}
+              />
             </div>
           </motion.div>
         )}
