@@ -122,8 +122,8 @@ const Slide08Events = ({ isActive, onInquire }) => {
                 eyebrow="Brand Activation"
                 title="Tesla Cyber-Hub Expo"
                 image="/assets/exposition-hall.png"
-                videoId="_l_pB7IOn0s" 
-                isActive={activeVideo === '_l_pB7IOn0s'}
+                videoId="sOMQ3Cj8Iv0" 
+                isActive={activeVideo === 'sOMQ3Cj8Iv0'}
                 onPlay={setActiveVideo}
               />
             </div>

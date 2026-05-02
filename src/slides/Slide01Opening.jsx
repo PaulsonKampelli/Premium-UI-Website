@@ -17,7 +17,7 @@ const Slide01Opening = ({ isActive, onNext }) => {
         {/* Video Background */}
         <iframe 
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-[120vw] h-[120vh] opacity-80 scale-110 pointer-events-none z-10"
-          src="https://www.youtube.com/embed/Z6f7v8_m4Sg?autoplay=1&mute=1&loop=1&playlist=Z6f7v8_m4Sg&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1"
+          src="https://www.youtube.com/embed/DJGe8-mU4ks?autoplay=1&mute=1&loop=1&playlist=DJGe8-mU4ks&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1"
           allow="autoplay; encrypted-media"
           frameBorder="0"
         />
