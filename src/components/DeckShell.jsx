@@ -72,7 +72,7 @@ const DeckShell = ({ slides }) => {
         </div>
 
         <div className="w-full h-full relative overflow-hidden">
-          <AnimatePresence initial={false} custom={direction}>
+          <AnimatePresence mode="wait" initial={false} custom={direction}>
             <motion.div
               key={currentSlide}
               custom={direction}
@@ -84,7 +84,7 @@ const DeckShell = ({ slides }) => {
                 x: { type: "spring", stiffness: 300, damping: 30 },
                 opacity: { duration: 0.4 }
               }}
-              className="absolute inset-0"
+              className="absolute inset-0 z-10"
             >
               <SlideComponent 
                 isActive={true} 
