@@ -37,14 +37,14 @@ const Modal = ({ isOpen, onClose, title }) => {
             initial={{ opacity: 0, scale: 0.96, x: '-50%', y: '-50%' }}
             animate={{ opacity: 1, scale: 1, x: '-50%', y: '-50%' }}
             exit={{ opacity: 0, scale: 0.96, x: '-50%', y: '-50%' }}
-            className="fixed top-1/2 left-1/2 w-[520px] max-w-[90vw] bg-[#111111] border-t-[3px] border-gold p-10 z-[1001]"
+            className="fixed top-1/2 left-1/2 w-[520px] max-w-[90vw] bg-[#111111] border-t-[3px] border-gold p-6 md:p-10 z-[1001]"
           >
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 p-4 text-gray-text hover:text-white transition-colors z-50"
+              className="absolute top-2 md:top-4 right-2 md:right-4 p-2 md:p-4 text-gray-text hover:text-white transition-colors z-50"
               aria-label="Close Modal"
             >
-              <X size={28} />
+              <X size={24} className="md:w-7 md:h-7" />
             </button>
 
             {!submitted ? (

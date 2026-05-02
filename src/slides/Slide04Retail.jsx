@@ -28,18 +28,18 @@ const Slide04Retail = ({ isActive, onInquire }) => {
       <EyebrowText>Retail Leasing</EyebrowText>
       <h2 className="headline-lg font-display text-white mb-16">450+ Brands. Room for Yours.</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mb-12 md:mb-20">
         {categories.map((cat, i) => (
           <motion.div
             key={i}
             initial={{ opacity: 0, y: 20 }}
             animate={isActive ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.3 + i * 0.1 }}
-            className="bg-bg-card border border-border-color p-10 flex flex-col items-start h-full group hover:border-gold transition-colors cursor-pointer"
+            className="bg-bg-card border border-border-color p-6 md:p-10 flex flex-col items-start h-full group hover:border-gold transition-colors cursor-pointer"
             onClick={() => onInquire(cat.modal)}
           >
-            <h3 className="font-display text-2xl text-white mb-6 tracking-wide group-hover:text-gold transition-colors">{cat.title}</h3>
-            <p className="text-gray-text leading-relaxed mb-10 flex-grow">
+            <h3 className="font-display text-xl md:text-2xl text-white mb-4 md:mb-6 tracking-wide group-hover:text-gold transition-colors">{cat.title}</h3>
+            <p className="text-gray-text text-xs md:text-base leading-relaxed mb-6 md:mb-10 flex-grow">
               {cat.body}
             </p>
             <OutlineButton onClick={(e) => { e.stopPropagation(); onInquire(cat.modal); }}>Inquire</OutlineButton>

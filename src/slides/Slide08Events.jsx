@@ -96,20 +96,20 @@ const Slide08Events = ({ isActive, onInquire }) => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="absolute inset-0 bg-[#0A0A0A] z-[100] p-24 flex flex-col"
+            className="absolute inset-0 bg-[#0A0A0A] z-[100] p-6 md:p-24 flex flex-col pt-24"
           >
             <button 
               onClick={() => { setShowDeepDive(false); setActiveVideo(null); }}
-              className="absolute top-12 right-12 text-gray-text hover:text-white flex items-center space-x-2 uppercase tracking-widest text-xs font-bold"
+              className="absolute top-6 md:top-12 right-6 md:right-12 text-gray-text hover:text-white flex items-center space-x-2 uppercase tracking-widest text-xs font-bold"
             >
               <X size={20} />
-              <span>Close Deep Dive</span>
+              <span className="hidden md:inline">Close Deep Dive</span>
             </button>
 
             <EyebrowText>Module: Case Studies</EyebrowText>
-            <h3 className="font-display text-5xl text-white mb-16">Past Programming Highlights</h3>
+            <h3 className="font-display text-3xl md:text-5xl text-white mb-8 md:mb-16">Past Programming Highlights</h3>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 flex-grow overflow-y-auto pr-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 flex-grow overflow-y-auto pr-2 md:pr-8 custom-scrollbar">
               <CaseStudyCard 
                 eyebrow="Concert Series"
                 title="Summer Kickoff 2024"

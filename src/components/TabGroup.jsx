@@ -6,12 +6,12 @@ const TabGroup = ({ tabs }) => {
 
   return (
     <div className="w-full">
-      <div className="flex border-b border-border-color mb-8">
+      <div className="flex overflow-x-auto border-b border-border-color mb-8 custom-scrollbar whitespace-nowrap">
         {tabs.map((tab, i) => (
           <button
             key={i}
             onClick={() => setActiveTab(i)}
-            className={`px-8 py-4 text-xs font-bold uppercase tracking-widest transition-all relative ${
+            className={`px-4 md:px-8 py-4 text-[10px] md:text-xs font-bold uppercase tracking-widest transition-all relative shrink-0 ${
               activeTab === i ? 'text-white' : 'text-gray-text hover:text-white'
             }`}
           >
