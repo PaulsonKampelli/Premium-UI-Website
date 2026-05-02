@@ -3,7 +3,7 @@
 A high-end, cinematic sales presentation built for the American Dream mall in East Rutherford, NJ. This is a slide-based interactive deck designed for retail leasing, sponsorships, and event booking.
 
 ## Live Demo
-[Live URL to be inserted here]
+[https://premium-ui-website.vercel.app/](https://premium-ui-website.vercel.app/)
 
 ## Tech Stack
 - **React 18** (UI Framework)
@@ -51,7 +51,7 @@ The deck is structured into four curated chapters to ensure a compelling sales n
 | **Video-First** | ✅ | Full-screen cinematic video backgrounds + Video-centric Case Study module. |
 | **Phase 2 Expansion** | ✅ | Working "Deep Dive" sub-module for Events (Slide 08) with case study content. |
 | **Luxury UI/UX** | ✅ | Gold/Black/White palette, Sharp Corners (no radius), Playfair Display typography. |
-| **High Performance** | ✅ | **React Lazy Loading** & **Code Splitting** for 90+ Lighthouse score goal. |
+| **High Performance** | ✅ | **Vite Asset Optimization** & **Code Splitting** for 90+ Lighthouse score goal. |
 | **AI Integration** | ✅ | 4x High-fidelity architectural visualizations generated specifically for this deck. |
 | **Business Objective** | ✅ | Clear conversion paths for Leasing, Sponsorship, and Event Bookings. |
 
