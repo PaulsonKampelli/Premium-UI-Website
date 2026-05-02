@@ -29,36 +29,36 @@ const Slide06Dining = ({ isActive }) => {
   ];
 
   return (
-    <div className="w-full h-full relative overflow-hidden flex flex-col">
-      <div className="absolute top-20 left-0 right-0 z-10 text-center pt-10">
+    <div className="w-full h-full relative overflow-y-auto md:overflow-hidden flex flex-col bg-[#080808]">
+      <div className="relative md:absolute top-0 md:top-20 left-0 right-0 z-10 text-center pt-24 md:pt-10 px-6">
         <EyebrowText>Dining & Lifestyle</EyebrowText>
         <h2 className="headline-lg font-display text-white">Beyond the Food Court</h2>
       </div>
 
-      <div className="flex flex-grow mt-32">
+      <div className="flex flex-col md:flex-row flex-grow mt-12 md:mt-32 min-h-screen md:min-h-0">
         {columns.map((col, i) => (
           <motion.div
             key={i}
-            initial={{ height: 0 }}
-            animate={isActive ? { height: "100%" } : { height: 0 }}
-            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: i * 0.2 }}
+            initial={{ height: 0, opacity: 0 }}
+            animate={isActive ? { height: "100%", opacity: 1 } : { height: 0, opacity: 0 }}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: i * 0.1 }}
             style={{ backgroundColor: col.bg }}
-            className="flex-1 flex flex-col items-center justify-center text-center p-12 overflow-hidden"
+            className="flex-1 flex flex-col items-center justify-center text-center p-8 md:p-12 overflow-hidden py-16 md:py-0"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isActive ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 1 + i * 0.2 }}
-              className="space-y-6"
+              transition={{ delay: 0.5 + i * 0.2 }}
+              className="space-y-4 md:space-y-6"
             >
-              <div className="text-5xl mb-8">{col.icon}</div>
-              <div className="text-gold font-display font-bold text-6xl md:text-7xl mb-2">
+              <div className="text-4xl md:text-5xl mb-4 md:mb-8">{col.icon}</div>
+              <div className="text-gold font-display font-bold text-5xl md:text-7xl mb-1 md:mb-2 leading-none">
                 {col.number}
               </div>
-              <div className="text-white text-sm uppercase tracking-widest font-bold mb-4">
+              <div className="text-white text-[10px] md:text-sm uppercase tracking-widest font-bold mb-2 md:mb-4 px-4">
                 {col.label}
               </div>
-              <p className="text-gray-text text-sm leading-relaxed max-w-[250px] mx-auto">
+              <p className="text-gray-text text-xs md:text-sm leading-relaxed max-w-[250px] mx-auto">
                 {col.body}
               </p>
             </motion.div>

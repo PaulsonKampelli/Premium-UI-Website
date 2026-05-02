@@ -11,7 +11,7 @@ const StatCounter = ({ end, suffix = "", prefix = "", label, isActive = false })
 
   return (
     <div className="flex flex-col items-center justify-center text-center">
-      <div className="text-gold font-display font-bold text-5xl md:text-6xl mb-2">
+      <div className="text-gold font-display font-bold text-3xl md:text-6xl mb-1 md:mb-2 leading-none">
         {prefix}{formattedCount}{suffix}
       </div>
       <div className="text-white text-sm uppercase tracking-widest font-medium">

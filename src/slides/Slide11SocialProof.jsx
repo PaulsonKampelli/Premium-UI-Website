@@ -22,25 +22,25 @@ const Slide11SocialProof = ({ isActive }) => {
       <EyebrowText>Trusted by the World's Leading Brands</EyebrowText>
       <h2 className="headline-lg font-display text-white mb-20">The Brands That Chose American Dream</h2>
 
-      <div className="grid grid-cols-3 gap-y-12 gap-x-20 mb-24 max-w-5xl">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-y-8 md:gap-y-12 gap-x-8 md:gap-x-20 mb-12 md:mb-24 max-w-5xl px-4">
         {brands.map((brand, i) => (
           <motion.div
             key={i}
-            initial={{ opacity: 0 }}
-            animate={isActive ? { opacity: 1 } : {}}
-            transition={{ delay: 0.3 + i * 0.05 }}
-            className="text-gray-text hover:text-white transition-colors cursor-default font-inter font-bold uppercase tracking-[0.3em] text-2xl md:text-3xl"
+            initial={{ opacity: 0, y: 10 }}
+            animate={isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+            transition={{ delay: 0.2 + i * 0.05 }}
+            className="text-gray-text hover:text-white transition-colors cursor-default font-inter font-bold uppercase tracking-[0.2em] md:tracking-[0.3em] text-lg md:text-3xl"
           >
             {brand}
           </motion.div>
         ))}
       </div>
 
-      <div className="flex justify-between w-full max-w-4xl border-t border-border-color pt-16">
+      <div className="flex flex-col md:flex-row justify-between w-full max-w-4xl border-t border-border-color pt-8 md:pt-16 px-8 gap-8 md:gap-0">
         {stats.map((stat, i) => (
           <div key={i} className="flex flex-col items-center">
-            <span className="text-gold font-display font-bold text-4xl mb-2">{stat.value}</span>
-            <span className="text-gray-text text-[10px] uppercase tracking-widest font-bold max-w-[150px]">{stat.label}</span>
+            <span className="text-gold font-display font-bold text-3xl md:text-4xl mb-1 md:mb-2">{stat.value}</span>
+            <span className="text-gray-text text-[8px] md:text-[10px] uppercase tracking-widest font-bold max-w-[150px]">{stat.label}</span>
           </div>
         ))}
       </div>

@@ -52,13 +52,13 @@ const Slide09Sponsorship = ({ isActive, onInquire }) => {
       <EyebrowText>Brand Partnerships</EyebrowText>
       <h2 className="headline-lg font-display text-white mb-16">Own the Moment. Own the Audience.</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-12 md:mb-16">
         {tiers.map((tier, i) => (
           <motion.div
             key={i}
             initial={{ opacity: 0, y: 20 }}
             animate={isActive ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.3 + i * 0.1 }}
+            transition={{ delay: 0.2 + i * 0.1 }}
           >
             <TierCard {...tier} onInquire={() => onInquire("Partnership Inquiry")} />
           </motion.div>

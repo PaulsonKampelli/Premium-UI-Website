@@ -2,18 +2,18 @@ import React, { Suspense, lazy } from 'react';
 import DeckShell from './components/DeckShell';
 
 // Lazy load slides for 90+ Lighthouse performance
-const Slide01Opening = lazy(() => import('./slides/Slide01Opening'));
-const Slide02Scale = lazy(() => import('./slides/Slide02Scale'));
-const Slide03Location = lazy(() => import('./slides/Slide03Location'));
-const Slide04Retail = lazy(() => import('./slides/Slide04Retail'));
-const Slide05Luxury = lazy(() => import('./slides/Slide05Luxury'));
-const Slide06Dining = lazy(() => import('./slides/Slide06Dining'));
-const Slide07Attractions = lazy(() => import('./slides/Slide07Attractions'));
-const Slide08Events = lazy(() => import('./slides/Slide08Events'));
-const Slide09Sponsorship = lazy(() => import('./slides/Slide09Sponsorship'));
-const Slide10Venues = lazy(() => import('./slides/Slide10Venues'));
-const Slide11SocialProof = lazy(() => import('./slides/Slide11SocialProof'));
-const Slide12CTA = lazy(() => import('./slides/Slide12CTA'));
+import Slide01Opening from './slides/Slide01Opening';
+import Slide02Scale from './slides/Slide02Scale';
+import Slide03Location from './slides/Slide03Location';
+import Slide04Retail from './slides/Slide04Retail';
+import Slide05Luxury from './slides/Slide05Luxury';
+import Slide06Dining from './slides/Slide06Dining';
+import Slide07Attractions from './slides/Slide07Attractions';
+import Slide08Events from './slides/Slide08Events';
+import Slide09Sponsorship from './slides/Slide09Sponsorship';
+import Slide10Venues from './slides/Slide10Venues';
+import Slide11SocialProof from './slides/Slide11SocialProof';
+import Slide12CTA from './slides/Slide12CTA';
 
 // Narrative Chapter Groupings
 const slides = [

@@ -21,7 +21,9 @@ body {
   background-color: var(--bg-primary);
   color: var(--white);
   font-family: 'Inter', sans-serif;
-  overflow: hidden; /* Prevent any body scroll */
+  overflow: hidden;
+  height: 100vh;
+  height: 100dvh; /* Use dynamic viewport height */
 }
 
 h1, h2, h3, h4, h5, h6, .font-display {
@@ -51,39 +53,58 @@ h1, h2, h3, h4, h5, h6, .font-display {
 /* Slide Styles */
 .slide-container {
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
   position: relative;
 }
 
 .slide-wrapper {
   width: 100%;
-  height: 100vh;
-  overflow: hidden;
+  height: 100dvh;
+  overflow-y: auto; /* Allow internal scroll if content overflows on mobile */
   position: relative;
   background-color: var(--bg-primary);
+  padding-top: 5rem; /* Space for mobile header */
+  padding-bottom: 7rem; /* Space for footer controls */
 }
 
-/* Typography Clamps */
+@media (min-width: 768px) {
+  .slide-wrapper {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    overflow: hidden;
+  }
+}
+
+/* Typography Clamps - More conservative for mobile */
 .headline-xl {
-  font-size: clamp(2.5rem, 6vw, 6rem);
+  font-size: clamp(2rem, 8vw, 6rem);
   line-height: 1.1;
 }
 
 .headline-lg {
-  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  font-size: clamp(1.75rem, 5vw, 4.5rem);
   line-height: 1.2;
 }
 
 .subheadline {
-  font-size: clamp(1rem, 1.5vw, 1.4rem);
+  font-size: clamp(0.9rem, 1.5vw, 1.4rem);
   line-height: 1.5;
 }
 
 .eyebrow {
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   text-transform: uppercase;
   letter-spacing: 0.3em;
   color: var(--gold);
   font-weight: 600;
+}
+
+/* Custom Scrollbar for internal scrolling */
+.custom-scrollbar::-webkit-scrollbar {
+  display: block;
+  width: 2px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--gold);
 }

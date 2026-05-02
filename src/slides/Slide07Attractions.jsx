@@ -53,7 +53,7 @@ const Slide07Attractions = ({ isActive, onInquire }) => {
       <EyebrowText>Attractions & Entertainment</EyebrowText>
       <h2 className="headline-lg font-display text-white mb-12">No Mall on Earth Competes With This</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6 mb-12">
         {attractions.map((attr, i) => (
           <AttractionCard key={i} {...attr} index={i} />
         ))}
