@@ -7,10 +7,10 @@ import { motion } from 'framer-motion';
 
 const Slide01Opening = ({ isActive, onNext }) => {
   return (
-    <div className="relative w-full h-full overflow-hidden flex items-center justify-center">
+    <SlideWrapper isActive={isActive} className="relative w-full h-full overflow-hidden flex items-center justify-center !p-0">
       {/* YouTube Background */}
       <div 
-        className="absolute inset-0 pointer-events-none overflow-hidden scale-110 bg-cover bg-center"
+        className="absolute inset-0 pointer-events-none overflow-hidden bg-cover bg-center"
         style={{ backgroundImage: 'url(/assets/grand-entrance.png)' }}
       >
         <iframe 
@@ -19,10 +19,10 @@ const Slide01Opening = ({ isActive, onNext }) => {
           allow="autoplay; encrypted-media"
           frameBorder="0"
         ></iframe>
-        <div className="absolute inset-0 bg-black/70 z-1" />
+        <div className="absolute inset-0 bg-black/70 z-[1]" />
       </div>
 
-      <SlideWrapper isActive={isActive} className="z-10 items-center text-center">
+      <div className="relative z-10 flex flex-col items-center text-center p-24">
         <EyebrowText>East Rutherford, New Jersey</EyebrowText>
         <h1 className="headline-xl font-display text-white mb-6">AMERICAN DREAM</h1>
         <p className="subheadline text-gray-text mb-12 max-w-2xl mx-auto">
@@ -43,8 +43,8 @@ const Slide01Opening = ({ isActive, onNext }) => {
             EST. 2019
            </span>
         </div>
-      </SlideWrapper>
-    </div>
+      </div>
+    </SlideWrapper>
   );
 };
 

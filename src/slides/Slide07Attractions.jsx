@@ -85,7 +85,7 @@ const Slide07Attractions = ({ isActive, onInquire }) => {
             <div className="w-full max-w-6xl aspect-video bg-black shadow-2xl border border-white/10">
               <iframe 
                 className="w-full h-full"
-                src="https://www.youtube.com/embed/8gTzX7G-PzA?autoplay=1&modestbranding=1"
+                src="https://www.youtube.com/embed/8yP1v0yRpxA?autoplay=1&modestbranding=1"
                 allow="autoplay; encrypted-media"
                 allowFullScreen
               />
