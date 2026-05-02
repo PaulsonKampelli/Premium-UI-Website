@@ -1,85 +1,41 @@
-# Mall of America Commercial Sales Deck
+# American Dream | Interactive Sales Deck
 
-A world-class, fully interactive, browser-based sales deck designed for the Mall of America commercial leasing and sponsorship team. 
+A high-end, cinematic sales presentation built for the American Dream mall in East Rutherford, NJ. This is a slide-based interactive deck designed for retail leasing, sponsorships, and event booking.
 
-This tool is built to replace static PDFs and fragmented presentations, offering a cinematic, high-energy, and interactive experience that drives immediate emotional buy-in from prospective tenants, sponsors, and event partners.
+## Live Demo
+[Live URL to be inserted here]
 
-## Features
+## Tech Stack
+- **React 18** (UI Framework)
+- **Vite** (Build Tool)
+- **Tailwind CSS** (Styling)
+- **Framer Motion** (Animations & Transitions)
+- **Lucide React** (Icons)
 
-- **Cinematic Experience**: Video-first (simulated via high-quality imagery and CSS parallax/animations), Apple-inspired luxury aesthetic.
-- **Deck Navigation**: Vertical non-linear navigation for quick jumping between slides.
-- **Slide Counter**: Persistent slide tracking for a structured presentation feel.
-- **Expandable Architecture**: Working Events sub-module with deep-dive technical specs.
-- **Scroll-Triggered Storytelling**: Elements reveal as the user scrolls, maintaining engagement and pacing the narrative.
-- **Data-Driven**: Showcases scale and visitor demographics elegantly.
-- **Modular Sections**: Covers Luxury Retail, Dining & Lifestyle, Attractions, and Events.
-- **Performant**: Built with vanilla HTML, CSS, and JS. Lightweight, no heavy frameworks, lazy-load ready.
-- **Responsive Design**: Works flawlessly on desktop and tablet for live sales calls or standalone links.
+## Installation & Development
+1. Clone the repository
+2. Run `npm install` to install dependencies
+3. Run `npm run dev` to start the local development server
+4. Run `npm run build` to create a production-ready bundle
 
-## Project Architecture (Expandable)
+## Design Decisions
+1. **Full-Screen Architecture**: Enforced a strict 100vh layout with `overflow: hidden` to simulate a professional presentation deck (e.g., DigiDeck).
+2. **Luxury Aesthetic**: Utilized a curated palette of Black (#080808), Gold (#C9A84C), and White, avoiding all rounded corners to maintain a premium, sharp brand identity.
+3. **Non-Linear Navigation**: Implemented a fixed sidebar for instant jumping between slides, supplemented by keyboard shortcuts and directional arrows.
+4. **Cinematic Motion**: Every slide entry and internal element (stats, cards, bars) is choreographed with Framer Motion for a "living" presentation feel.
+5. **Interactive Modals**: A centralized modal system handles all calls-to-action (Leasing, Booking, Partnerships) with a consistent, professional form flow.
 
-The project is structured with expandability in mind (Phase 2 ready). 
+## AI Integration & Fluency
+This project showcases high AI fluency through:
+- **Generative Design**: 4x High-fidelity, architectural-style images were generated using AI to visualize the Luxury Corridor, Grand Entrance, Performing Arts Center, and Exposition Hall where real-world assets were limited or low-resolution.
+- **Content Engineering**: AI was used to synthesize verified statistics into compelling narrative "story beats" that move the prospect closer to a business action.
+- **Code Acceleration**: The entire React architecture, custom hooks for counting and navigation, and complex animation states were orchestrated with AI assistance to ensure rapid delivery without sacrificing quality.
 
-```text
-/
-├── index.html            # Main entry point and core layout
-├── css/
-│   ├── style.css         # Core styles, variables, typography, and grid
-│   └── animations.css    # Keyframes, hover states, scroll reveal utilities
-├── js/
-│   └── main.js           # Intersection observers, parallax, smooth scroll
-├── assets/
-│   └── images/           # High-resolution, optimized imagery (AI-generated for this demo)
-└── README.md
-```
+## Expandable Architecture (Phase 2)
+The project is built with modularity at its core:
+- **Sub-Module Support**: Slide 08 (Events) features a working "Deep Dive" overlay that demonstrates how the deck can expand into detailed case studies or technical specs without leaving the slide context.
+- **Dynamic Component Library**: All UI elements (Buttons, Cards, Modals) are decoupled, allowing the sales team to spin up new slides or deeper modules (e.g., specific venue floor plans) with minimal effort.
+- **State-Driven Experience**: The deck's state management is centralized, making it easy to add features like "Share specific slide" or "Auto-play mode" for trade show displays.
 
-To expand this into sub-modules (e.g., an Events Module or Sponsorship Module), you can simply create new HTML files (e.g., `events.html`) that utilize the existing CSS architecture and link them from the main landing page, or implement an SPA router.
-
-## Setup Instructions
-
-Since this is a vanilla web application, no build tools are strictly required. 
-
-### Running Locally
-
-1. **Clone the repository:**
-   ```bash
-   git clone <repo-url>
-   cd moa-sales-deck
-   ```
-
-2. **Serve the files:**
-   You can use any local web server. If you have Node.js installed, you can use `npx serve`:
-   ```bash
-   npx serve .
-   ```
-   Or using Python 3:
-   ```bash
-   python -m http.server 8000
-   ```
-
-3. **View the application:**
-   Open `http://localhost:8000` (or the port provided by your server) in your browser.
-
-## Deployment
-
-This application is ready to be deployed to any static hosting provider.
-
-### Vercel / Netlify
-1. Connect your GitHub repository to Vercel or Netlify.
-2. Leave the "Build Command" empty.
-3. Set the "Publish directory" to the root (`.`).
-4. Deploy.
-
-### GitHub Pages
-1. Go to your repository settings.
-2. Navigate to "Pages".
-3. Select the `main` branch as the source and `/root` directory.
-4. Save to deploy.
-
-## Design Inspiration
-- **Aesthetic**: Luxury UI (Apple, Tesla, Hermès)
-- **Format**: Interactive Digideck
-- **Tone**: Modern, Confident, High-energy
-
-## AI Integration
-Assets within this project (cinematic hero shot, luxury retail wing, dining atrium, entertainment park, and event space) were generated using state-of-the-art AI image generation to achieve a premium, hyper-realistic architectural look where official high-resolution assets were unavailable.
+## AI Tools Used
+- Built with **Antigravity** (Google DeepMind Coding Assistant).
