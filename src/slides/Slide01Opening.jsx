@@ -9,17 +9,20 @@ const Slide01Opening = ({ isActive, onNext }) => {
     <div className="relative w-full h-full overflow-hidden bg-[#080808]">
       {/* Cinematic Background Video */}
       <div className="absolute inset-0 z-0">
+        {/* Fallback Image */}
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-50 z-10"
+          className="absolute inset-0 bg-cover bg-center z-0"
           style={{ backgroundImage: 'url(/assets/grand-entrance.png)' }}
         />
-        <div className="absolute inset-0 bg-black/50 z-20" />
+        {/* Video Background */}
         <iframe 
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-[120vw] h-[120vh] opacity-70 scale-110 pointer-events-none z-0"
-          src="https://www.youtube.com/embed/8yP1v0yRpxA?autoplay=1&mute=1&loop=1&playlist=8yP1v0yRpxA&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-[120vw] h-[120vh] opacity-80 scale-110 pointer-events-none z-10"
+          src="https://www.youtube.com/embed/Z6f7v8_m4Sg?autoplay=1&mute=1&loop=1&playlist=Z6f7v8_m4Sg&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1"
           allow="autoplay; encrypted-media"
           frameBorder="0"
         />
+        {/* Overlays */}
+        <div className="absolute inset-0 bg-black/40 z-20" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-[#080808]/80 z-30" />
       </div>
 
