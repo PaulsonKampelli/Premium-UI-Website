@@ -10,12 +10,12 @@ const Slide10Venues = ({ isActive, onInquire }) => {
       <EyebrowText>Signature Venues</EyebrowText>
       <h2 className="headline-lg font-display text-white mb-8 md:mb-16">Every Event Has Its Stage</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 flex-grow md:max-h-[600px]">
+      <div className="flex md:grid md:grid-cols-2 gap-6 md:gap-10 flex-grow md:max-h-[600px] overflow-x-auto pb-4 snap-x custom-scrollbar w-full">
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
           animate={isActive ? { opacity: 1, scale: 1 } : {}}
           transition={{ delay: 0.3 }}
-          className="bg-bg-card border border-border-color flex flex-col hover:border-gold transition-colors overflow-hidden"
+          className="bg-bg-card border border-border-color flex flex-col hover:border-gold transition-colors overflow-hidden min-w-[300px] shrink-0 snap-center"
         >
           <div className="h-48 overflow-hidden">
             <img src="/assets/concert-venue.png" alt="Performing Arts Center" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
@@ -39,7 +39,7 @@ const Slide10Venues = ({ isActive, onInquire }) => {
           initial={{ opacity: 0, scale: 0.98 }}
           animate={isActive ? { opacity: 1, scale: 1 } : {}}
           transition={{ delay: 0.4 }}
-          className="bg-bg-card border border-border-color flex flex-col hover:border-gold transition-colors overflow-hidden"
+          className="bg-bg-card border border-border-color flex flex-col hover:border-gold transition-colors overflow-hidden min-w-[300px] shrink-0 snap-center"
         >
           <div className="h-48 overflow-hidden">
             <img src="/assets/exposition-hall.png" alt="Exposition Center" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />

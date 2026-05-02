@@ -28,14 +28,14 @@ const Slide04Retail = ({ isActive, onInquire }) => {
       <EyebrowText>Retail Leasing</EyebrowText>
       <h2 className="headline-lg font-display text-white mb-16">450+ Brands. Room for Yours.</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mb-12 md:mb-20">
+      <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-8 mb-12 md:mb-20 overflow-x-auto pb-4 snap-x custom-scrollbar w-full">
         {categories.map((cat, i) => (
           <motion.div
             key={i}
             initial={{ opacity: 0, y: 20 }}
             animate={isActive ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.3 + i * 0.1 }}
-            className="bg-bg-card border border-border-color p-6 md:p-10 flex flex-col items-start h-full group hover:border-gold transition-colors cursor-pointer"
+            className="bg-bg-card border border-border-color p-6 md:p-10 flex flex-col items-start h-full group hover:border-gold transition-colors cursor-pointer min-w-[280px] md:min-w-0 shrink-0 snap-center"
             onClick={() => onInquire(cat.modal)}
           >
             <h3 className="font-display text-xl md:text-2xl text-white mb-4 md:mb-6 tracking-wide group-hover:text-gold transition-colors">{cat.title}</h3>
