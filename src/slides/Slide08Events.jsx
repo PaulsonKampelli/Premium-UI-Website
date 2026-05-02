@@ -84,7 +84,7 @@ const Slide08Events = ({ isActive, onInquire }) => {
                   <div className="absolute inset-0 bg-gold/10 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center">
                     <Play fill="currentColor" size={48} className="text-gold" />
                   </div>
-                  <img src="https://images.unsplash.com/photo-1617788130335-51dc3d63b2f5?auto=format&fit=crop&q=80&w=800" alt="Brand Activation" className="w-full h-full object-cover grayscale" />
+                  <img src="/assets/exposition-hall.png" alt="Brand Activation" className="w-full h-full object-cover grayscale" />
                   <div className="absolute bottom-6 left-6 z-20">
                     <span className="text-gold text-[10px] font-bold uppercase tracking-widest block mb-2">Brand Activation</span>
                     <h4 className="text-white font-display text-2xl">Tesla Cyber-Hub Expo</h4>
