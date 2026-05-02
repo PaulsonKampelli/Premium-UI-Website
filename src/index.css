@@ -63,7 +63,6 @@ h1, h2, h3, h4, h5, h6, .font-display {
   height: 100dvh;
   overflow-y: auto; /* Allow internal scroll if content overflows on mobile */
   position: relative;
-  background-color: var(--bg-primary);
   padding-top: 5rem; /* Space for mobile header */
   padding-bottom: 7rem; /* Space for footer controls */
 }
